@@ -1,5 +1,4 @@
 import React from "react";
-import playStoreIcon from "../../../../public/play_store.png";
 import arrowIcon from "../../../../public/arrow_next.svg";
 import "./AppsCard.css";
 

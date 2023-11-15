@@ -1,5 +1,4 @@
 import React from "react";
-import galleryIcon from "../../../../public/gallery.png";
 import arrowIcon from "../../../../public/arrow_next.svg";
 import "./ProjectCard.css";
 
