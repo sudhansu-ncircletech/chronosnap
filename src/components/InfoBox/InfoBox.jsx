@@ -1,23 +1,23 @@
 import React from "react";
-import IntroCard from "../ProfileSections/IntroCard/IntroCard";
-import ProjectCard from "../ProfileSections/ProjectCard/ProjectCard";
-import AppsCard from "../ProfileSections/AppsCard/AppsCard";
-import StudiesCard from "../ProfileSections/GeneralInfoCard/GeneralInfoCard";
-import CurrentJob from "../ProfileSections/CurrentJob/CurrentJob";
-import FaveProjectsCard from "../ProfileSections/FaveProjectsCard/FaveProjectsCard";
+import IntroCard from "../TimelineSection/IntroCard";
+import SecondCard from "../TimelineSection/SecondCard";
+import ThirdCard from "../TimelineSection/ThirdCard";
+import FirstCard from "../TimelineSection/FirstCard";
+import Foundation from "../TimelineSection/Foundation";
+import FourthCard from "../TimelineSection/FourthCard";
 import "./InfoBox.css";
 
 const InfoBox = ({ currentStage }) => {
   // console.log("InfoBox received currentStage:", currentStage);
 
   return (
-    <div className={`info-box ${currentStage > 0 ? "visible" : ""}`}>
+    <div className={`absolute top-15 left-1/2 transform -translate-x-1/2 animate-floatAnimation z-10 sm:top-70 sm:width-3/4 ${currentStage > 0 ? "visible" : ""}`}>
       {currentStage === 1 && <IntroCard />}
-      {currentStage === 2 && <FaveProjectsCard />}
-      {currentStage === 3 && <AppsCard />}
-      {currentStage === 4 && <ProjectCard />}
-      {currentStage === 5 && <StudiesCard />}
-      {currentStage === 6 && <CurrentJob />}
+      {currentStage === 2 && <FourthCard />}
+      {currentStage === 3 && <ThirdCard />}
+      {currentStage === 4 && <SecondCard />}
+      {currentStage === 5 && <FirstCard />}
+      {currentStage === 6 && <Foundation />}
     </div>
   );
 };

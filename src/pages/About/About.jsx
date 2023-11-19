@@ -72,10 +72,6 @@ const About = () => {
       <div className="homepage-container">
         <InfoBox currentStage={currentStage} />
 
-        <div className="logo-container">
-          <h1>Chronosnap</h1>
-        </div>
-
         <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
 
         {showHint && (
