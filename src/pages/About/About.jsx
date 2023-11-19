@@ -71,9 +71,7 @@ const About = () => {
     <>
       <div className="homepage-container">
         <InfoBox currentStage={currentStage} />
-
         <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
-
         {showHint && (
           <>
             <div className="hint-text">Click and Drag to Explore</div>
@@ -89,7 +87,6 @@ const About = () => {
             </div>
           </>
         )}
-
         <Canvas className="homepage-canvas" camera={{ near: 0.1, far: 1000 }}>
           <Suspense fallback={<Loader />}>
             <Biplane

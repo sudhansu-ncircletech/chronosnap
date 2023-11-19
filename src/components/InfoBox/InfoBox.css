@@ -1,11 +1,5 @@
 .info-box {
-  position: absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
   animation: floatAnimation 3s ease-in-out infinite;
-
-  z-index: 10;
 }
 
 .info-box.visible {
