@@ -9,7 +9,7 @@ import PlayButton from "../../components/PlayButton/PlayButton";
 import soundPath from "../../../public/engine_loop.wav";
 import { mediaConstants } from "../../configs/mediaConstants";
 import dragHandIcon from "../../../public/drag.png";
-import "./HomePage.css";
+import "./About.css";
 
 const About = () => {
   const audioRef = useRef(new Audio(soundPath));

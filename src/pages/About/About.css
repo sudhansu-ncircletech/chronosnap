@@ -1,240 +1,143 @@
-.about-canvas-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.homepage-container {
   height: 100vh;
-  z-index: 10;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://cdn3d.iconscout.com/3d/premium/thumb/cloud-3100509-2589436.png"),
+    linear-gradient(
+      to bottom,
+      rgba(134, 180, 241, 0.5),
+      rgba(157, 193, 255, 0.5)
+    ),
+    linear-gradient(to bottom, rgb(134, 180, 241) 0%, rgb(157, 193, 255) 100%);
+  background-repeat: repeat;
+  animation: moveClouds 100s linear infinite;
+  overflow: hidden;
 }
 
-.react-three-canvas {
+.hand-icon-outer-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.about-me-card {
-  flex-shrink: 0;
-  border-radius: 20px;
-  border: 1px solid #73b1ff;
-  z-index: 100;
-  min-height: 100vh;
-  width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(149, 193, 255, 0.8) 0%,
-    rgba(202, 223, 255, 0.8) 100%
-  );
-  backdrop-filter: blur(35px);
-  overflow: auto;
-  padding: 5% 10%;
+  bottom: 40px;
+  left: 50%;
+  animation: swipeAnimation 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
   z-index: 10;
 }
 
-.about-me-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 auto;
+.hand-icon-container {
+  position: relative;
+  left: -50%;
 }
 
-.about-me-title {
-  color: #1d2235;
-  font-size: 36px;
-  font-family: Manrope;
-  font-style: normal;
-  font-weight: 800;
-  margin-bottom: 40px;
+.hand-icon {
+  height: 40px;
+  width: auto;
 }
 
-.about-me-profile-section {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.about-me-profile-picture {
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0;
-  margin-right: 30px;
+.circle {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: red;
   border-radius: 50%;
-  background: lightgray 50% / cover no-repeat;
+  animation: circleAnimation 1s ease-in-out infinite;
 }
 
-.about-me-greetings {
-  font-size: 32px;
-  font-family: Manrope;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.about-me-greetings .about-me-hi {
-  color: #363f62;
-  display: block;
-}
-
-.about-me-greetings .about-me-name {
-  color: #406aff;
+.hint-text {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
   font-weight: bold;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  animation: bounce 2s infinite;
 }
 
-.about-me-vector-image {
-  width: 170px;
-  height: 90px;
-}
-
-.about-me-description {
-  color: #303750;
-  font-size: 18px;
-  font-family: Manrope;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 40px;
-}
-
-.skills-title {
-  color: #1d2235;
-  font-size: 28px;
-  font-family: Manrope;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.skill-circle-wrapper {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 30px;
-  margin-bottom: 30px;
-}
-
-.skill-circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: #f6f6f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.skill-icon {
-  width: 50px;
-  height: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .about-me-card {
-    padding: 5% 5%;
+@keyframes swipeAnimation {
+  0%,
+  100% {
+    transform: translateX(-70%);
   }
-
-  .about-me-title {
-    font-size: 28px;
-  }
-
-  .about-me-profile-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-me-profile-picture {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 24px;
-  }
-
-  .about-me-greetings {
-    font-size: 24px;
-  }
-
-  .about-me-vector-image {
-    width: 130px;
-    height: 70px;
-  }
-
-  .about-me-description {
-    font-size: 16px;
-  }
-
-  .skills-title {
-    font-size: 20px;
-  }
-
-  .skill-circle-wrapper {
-    width: 80px;
-    height: 80px;
-  }
-
-  .skill-circle {
-    width: 70px;
-    height: 70px;
-  }
-
-  .skill-icon {
-    width: 35px;
-    height: 35px;
+  50% {
+    transform: translateX(-30%);
   }
 }
 
-@media screen and (max-width: 480px) {
-  .about-me-card {
-    padding: 5% 5%;
+@keyframes circleAnimation {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes moveClouds {
+  0% {
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 0px, 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .homepage-container {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-size: 90%, cover, cover;
   }
 
-  .about-me-title {
-    font-size: 24px;
+  .hand-icon-outer-container {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    z-index: 10;
   }
 
-  .about-me-profile-picture {
-    width: 120px;
-    height: 120px;
+  .hand-icon {
+    height: 30px;
+    width: auto;
   }
 
-  .about-me-greetings {
-    font-size: 20px;
-  }
-
-  .about-me-vector-image {
-    width: 100px;
-    height: 50px;
-  }
-
-  .about-me-description {
+  .hint-text {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
     font-size: 14px;
-  }
-
-  .skills-title {
-    font-size: 16px;
-  }
-
-  .skill-circle-wrapper {
-    width: 60px;
-    height: 60px;
-  }
-
-  .skill-circle {
-    width: 50px;
-    height: 50px;
-  }
-
-  .skill-icon {
-    width: 25px;
-    height: 25px;
   }
 }
